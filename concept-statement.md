@@ -1,0 +1,13 @@
+## Concept Statement
+
+"Silksong: Unthreaded" (or just "Unthreaded") is a site dedicated to the video game "Hollow Knight: Silksong". Users can explore different aspects of Pharloom through analyses of artistic elements that all focus on "the smaller picture".
+
+Unthreaded is for anyone interested in the art of the game and visual design, whether for study, passion or curiosity. It showcases an unexplored side of Team Cherry's decisions, offering insight to visitors interested in the game as well as in art and design. Its in-depth exploration of artistic elements and theory is meant to assist art and design students, while its background information on the game lets newcomers and casual fans learn more.
+
+Two features distinguish it from existing resources. First, Unthreaded offers a unique form of analysis: comparison between the first game and Silksong. After each element is analysed, the Comparison subpage explores how it relates to, or differs from, "Hollow Knight". Second, Unthreaded focuses on "the smaller picture". Many online resources, such as video essays and articles, cover Silksong's bigger picture from a controlled, linear perspective. The site informs visitors about the game's unexplored details in a non-linear, interactive format.
+
+Unthreaded is designed for two distinct types of user. The first is casual fans and newcomers, likely to range from young teenagers to adults in their thirties. Casual fans have played enough to know a little about Pharloom, while newcomers want to understand their encounters more deeply as they play. They have little or no knowledge of art and design principles, and they would often browse on a phone in short sessions. The second type is university art and design students, who know Pharloom well enough to study its art. This group is mostly teenagers and young adults. They would typically browse on a laptop or computer, in longer sessions, researching one or two visual elements and comparing them with the first game.
+
+Within the website there are features for each of the two user types. For casual fans and newcomers, the non-linear composition of the website and concise explanations of elements allow them to navigate as they wish, quickly learning new concepts and ideas. For students there is the Comparison subpage, allowing them to study the art direction of Team Cherry, and how the team changed their approach, or kept a successful one. Interactive and multimedia elements add extra options for users, letting them zoom in on scenes and objects, and view a description of their context and meaning. The following personas represent these user types.
+
+Personas yet to be added.
