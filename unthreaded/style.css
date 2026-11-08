@@ -1,9 +1,12 @@
+/* main */
+
 :root {
     --color-page-background: #150403;
     --color-red: #d11d29;
     --color-dark-red: #7b2c31;
     --color-panel: #2b0d0f;
     --color-border: #5a2327;
+    --color-light: #e8e8e8;
 }
 
 body {
@@ -22,7 +25,7 @@ h1 {
 }
 
 
-
+/* Navbar and Footer */
 
 .site-nav {
     background: var(--color-dark-red);
@@ -43,4 +46,45 @@ h1 {
 
 .offcanvas {
     background: var(--color-panel);
+}
+
+
+/* Buttons */
+
+.btn-red {
+    background: var(--color-red);
+    border-color: var(--color-red);
+    color: #fff;
+}
+
+.btn-red:hover {
+    background: #a01720;
+    border-color: #a01720;
+    color: #fff;
+}
+
+/* Home Page */
+
+.tile-label {
+    margin-top: 0.9rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.light-section {
+    background: var (--color-light);
+    color: var(--color-page-background);
+    padding: 3.5rem 0;
+}
+
+.light-section .image-placeholder {
+    background: #3a1518;
+}
+
+.gallery-cta {
+    display: block;
+    padding: 4.5rem 1rem;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
 }
