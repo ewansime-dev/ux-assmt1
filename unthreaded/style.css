@@ -27,7 +27,9 @@ h1 {
 
 /* Navbar and Footer */
 
-.site-nav {
+.site-nav,
+.site-foot,
+.gallery-cta {
     background: var(--color-dark-red);
 }
 
@@ -88,3 +90,5 @@ h1 {
     text-align: center;
     text-decoration: none;
 }
+
+/* Carousel */
