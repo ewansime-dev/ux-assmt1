@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content="width = device-width, initial-scale = 1">
+    <title> Scenes | Unthreaded </title>
+
+    <!-- Setting up font, Bootstrap elements and icons -->
+    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel = "stylesheet">
+    <link href = "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel = "stylesheet">
+    <link href = "https://fonts.googleapis.com/css2?family=Host+Grotesk:wght@400;600;800&display=swap" rel = "stylesheet">
+    <!-- Overrides links above -->
+    <link href = "style.css" rel = "stylesheet">
+</head>
+
+<!-- lets app.js identify page -->
+<body id = "top" data-page = "scenes">
+
+    <nav class = "navbar navbar-expand-lg site-nav sticky-top" data-bs-theme = "dark">
+        <div class = "container-fluid px-3">
+
+            <button class = "navbar-toggler border-0 me-2" data-bs-toggle = "offcanvas" data-bs-target = "#menu">
+                <span class = "navbar-toggler-icon"></span>
+            </button>
+
+            <a class = "navbar-brand d-flex align-items-center gap-1 m-0 me-auto me-lg-0" href = "HomePage.html">
+                <img class = "logo-mark" src = "images/logo.png" alt = "">
+                <span>nthreaded</span>
+            </a>
+
+            <div class = "offcanvas offcanvas-start offcanvas-lg" tabindex = "-1" id = "menu">
+                <div class = "offcanvas-header">
+                    <h2 class = "offcanvas-title h5" id = "menuTitle">Menu</h2>
+                    <button class = "btn-close" data-bs-dismiss = "offcanvas"></button>
+                </div>
+                <div class = "offcanvas-body justify-content-lg-center">
+                    <ul class = "navbar-nav">
+                        <li class = "nav-item">
+                            <a class = "nav-link active" href = "scenes.html">Scenes</a>
+                        </li>
+                        <li class = "nav-item">
+                            <a class = "nav-link" href = "characters.html">Characters</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class = "btn btn-outline-light" data-bs-toggle = "modal" data-bs-target = "#spoilerModal">
+                <i class = "bi bi-eye-slash me-2"></i>Spoilers
+            </button>
+
+        </div>
+    </nav>
+
+
+    <main>
+        <div class = "container page-section">
+
+            <h1 class = "mb-4">Scenes</h1>
+
+            <!-- app.js redraws the grid when anything in here changes-->
+            <div id = "scenesControls">
+                <div class = "row g-4 g-md-5">
+
+                    <!-- left column: sort, area filters and clear button-->
+                    <aside class = "col-lg-3">
+
+                        <label for = "sort" class = "form-label fw-bold">Sort By</label>
+                        <select id = "sort" class = "form-select mb-4">
+                            <option value = "az">Name (A to Z)</option>
+                            <option value = "za">Name (Z to A)</option>
+                        </select>
+
+                        <fieldset class = "filter-list">
+                            <legend class = "fs-6 fw-bold">Filter Areas:</legend>
+
+                            <div id = "areaFilters">
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Moss Grotto" id = "area0">
+                                    <label class = "form-check-label" for = "area0">Moss Grotto</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Bone Bottom" id = "area1">
+                                    <label class = "form-check-label" for = "area1">Bone Bottom</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "The Marrow" id = "area2">
+                                    <label class = "form-check-label" for = "area2">The Marrow</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Deep Docks" id = "area3">
+                                    <label class = "form-check-label" for = "area3">Deep Docks</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Far Fields" id = "area4">
+                                    <label class = "form-check-label" for = "area4">Far Fields</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Greymoor" id = "area5">
+                                    <label class = "form-check-label" for = "area5">Greymoor</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Bellhart" id = "area6">
+                                    <label class = "form-check-label" for = "area6">Bellhart</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "Shellwood" id = "area7">
+                                    <label class = "form-check-label" for = "area7">Shellwood</label>
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                        <!-- disabled until a box is ticked-->
+                        <button type = "button" id = "clearFilters" class = "btn btn-outline-light btn-sm mt-3" disabled>Clear filters</button>
+
+                    </aside>
+
+
+                    <!-- right column: results-->
+                    <div class = "col-lg-9">
+
+                        <h2 class = "h4 mb-4">Results for: <span id = "resultsFor" class = "text-secondary fw-normal"></span></h2>
+
+                        <!-- scene cards: app.js only shows, hides and reorders these-->
+                        <div class = "row g-4" id = "grid">
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Fleatopia Bench" data-area = "Moss Grotto">
+                                <a class = "scene-card" href = "scene.html">
+                                    <img src = "images/fleatopia-bench.jpg" alt = "Fleatopia Bench" class = "img-fluid">
+                                    <div class = "label">Fleatopia Bench</div>
+                                    <div class = "small text-secondary">Moss Grotto</div>
+                                </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Grand Bellway" data-area = "Bone Bottom">
+                            <a class = "scene-card" href = "#" data-goes = "the Grand Bellway scene page">
+                                <img src = "images/grand-bellway.jpg" alt = "Grand Bellway" class = "img-fluid">
+                                <div class = "label">Grand Bellway</div>
+                                <div class = "small text-secondary">Bone Bottom</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Jubilana's Shop" data-area = "The Marrow">
+                            <a class = "scene-card" href = "#" data-goes = "the Jubilana's Shop scene page">
+                                <img src = "images/jubilanas-shop.jpg" alt = "Jubilana's Shop" class = "img-fluid">
+                                <div class = "label">Jubilana's Shop</div>
+                                <div class = "small text-secondary">The Marrow</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Terminus" data-area = "Deep Docks">
+                            <a class = "scene-card" href = "#" data-goes = "the Terminus scene page">
+                                <img src = "images/terminus.jpg" alt = "Terminus" class = "img-fluid">
+                                <div class = "label">Terminus</div>
+                                <div class = "small text-secondary">Deep Docks</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Shakra's Shrine" data-area = "Far Fields">
+                            <a class = "scene-card" href = "#" data-goes = "the Shakra's Shrine scene page">
+                                <img src = "images/shakras-shrine.jpg" alt = "Shakra's Shrine" class = "img-fluid">
+                                <div class = "label">Shakra's Shrine</div>
+                                <div class = "small text-secondary">Far Fields</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Eva" data-area = "Greymoor">
+                            <a class = "scene-card" href = "#" data-goes = "the Eva scene page">
+                                <img src = "images/eva.jpg" alt = "Eva" class = "img-fluid">
+                                <div class = "label">Eva</div>
+                                <div class = "small text-secondary">Greymoor</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Hokers" data-area = "Bellhart">
+                            <a class = "scene-card" href = "#" data-goes = "the Hokers scene page">
+                                <img src = "images/hokers.jpg" alt = "Hokers" class = "img-fluid">
+                                <div class = "label">Hokers</div>
+                                <div class = "small text-secondary">Bellhart</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Craw Lake" data-area = "Shellwood">
+                            <a class = "scene-card" href = "#" data-goes = "the Craw Lake scene page">
+                                <img src = "images/craw-lake.jpg" alt = "Craw Lake" class = "img-fluid">
+                                <div class = "label">Craw Lake</div>
+                                <div class = "small text-secondary">Shellwood</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Pond Catching" data-area = "Moss Grotto">
+                            <a class = "scene-card" href = "#" data-goes = "the Pond Catching scene page">
+                                <img src = "images/pond-catching.jpg" alt = "Pond Catching" class = "img-fluid">
+                                <div class = "label">Pond Catching</div>
+                                <div class = "small text-secondary">Moss Grotto</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "The Mist" data-area = "Bone Bottom">
+                            <a class = "scene-card" href = "#" data-goes = "the The Mist scene page">
+                                <img src = "images/the-mist.jpg" alt = "The Mist" class = "img-fluid">
+                                <div class = "label">The Mist</div>
+                                <div class = "small text-secondary">Bone Bottom</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Fayforn" data-area = "The Marrow">
+                            <a class = "scene-card" href = "#" data-goes = "the Fayforn scene page">
+                                <img src = "images/fayforn.jpg" alt = "Fayforn" class = "img-fluid">
+                                <div class = "label">Fayforn</div>
+                                <div class = "small text-secondary">The Marrow</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Mask Maker's Retreat" data-area = "Deep Docks">
+                            <a class = "scene-card" href = "#" data-goes = "the Mask Maker's Retreat scene page">
+                                <img src = "images/mask-makers-retreat.jpg" alt = "Mask Maker's Retreat" class = "img-fluid">
+                                <div class = "label">Mask Maker's Retreat</div>
+                                <div class = "small text-secondary">Deep Docks</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Grindle's Cell" data-area = "Far Fields">
+                            <a class = "scene-card" href = "#" data-goes = "the Grindle's Cell scene page">
+                                <img src = "images/grindles-cell.jpg" alt = "Grindle's Cell" class = "img-fluid">
+                                <div class = "label">Grindle's Cell</div>
+                                <div class = "small text-secondary">Far Fields</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Sprintmaster Stadium" data-area = "Greymoor">
+                            <a class = "scene-card" href = "#" data-goes = "the Sprintmaster Stadium scene page">
+                                <img src = "images/sprintmaster-stadium.jpg" alt = "Sprintmaster Stadium" class = "img-fluid">
+                                <div class = "label">Sprintmaster Stadium</div>
+                                <div class = "small text-secondary">Greymoor</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Magnetite Dice" data-area = "Bellhart">
+                            <a class = "scene-card" href = "#" data-goes = "the Magnetite Dice scene page">
+                                <img src = "images/magnetite-dice.jpg" alt = "Magnetite Dice" class = "img-fluid">
+                                <div class = "label">Magnetite Dice</div>
+                                <div class = "small text-secondary">Bellhart</div>
+                            </a>
+                        </div>
+
+                        <div class = "col-6 col-md-4 scene" data-name = "Swift Step" data-area = "Shellwood">
+                            <a class = "scene-card" href = "#" data-goes = "the Swift Step scene page">
+                                <img src = "images/swift-step.jpg" alt = "Swift Step" class = "img-fluid">
+                                <div class = "label">Swift Step</div>
+                                <div class = "small text-secondary">Shellwood</div>
+                            </a>
+                        </div>
+
+                        </div>
+
+                        <p id = "noScenes" class = "py-4" hidden>No scenes in the selected areas.</p>
+
+
+                        <!-- pagination (links show a toast, only page 1 exists)-->
+                        <nav class = "mt-4">
+                            <ul class = "pagination justify-content-center">
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "the previous page of scenes">
+                                    <i class = "bi bi-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class = "page-item active">
+                                <a class = "page-link" href = "#" data-goes = "page 1 of scenes">1</a>
+                            </li>
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "page 2 of scenes">2</a>
+                            </li>
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "page 3 of scenes">3</a>
+                            </li>
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "page 4 of scenes">4</a>
+                            </li>
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "page 5 of scenes">5</a>
+                            </li>
+                            <li class = "page-item">
+                                <a class = "page-link" href = "#" data-goes = "the next page of scenes">
+                                    <i class = "bi bi-chevron-right"></i>
+                                </a>
+                            </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- featured scene-->
+            <section class = "mt-5">
+                <h2 class = "mb-3">Featured Scene: Coral Army</h2>
+                <a class = "d-block" href = "#" data-goes = "the Coral Army scene page">
+                    <img src = "images/coral-army.jpg" alt = "Coral Army" class = "img-fluid">
+                </a>
+                <p class = "mt-3">Lorem ipsum</p>
+            </section>
+
+        </div>
+    </main>
+
+
+
+    <footer class = "site-foot">
+        <div class = "container-fluid px-3 py-3 d-flex flex-wrap align-items-center gap-4">
+            <a href = "#" data-goes = "the About page">About</a>
+            <a href = "#" data-goes = "the Discord Server">
+                <i class = "bi bi-discord me-2"></i>Discord
+            </a>
+            <a href = "#" data-goes = "the YouTube channel">
+                <i class = "bi bi-youtube me-2"></i>YouTube
+            </a>
+            <a href = "#" data-goes = "the Instagram account">
+                <i class = "bi bi-instagram me-2"></i>Instagram
+            </a>
+            <a class = "ms-auto" href = "#top">Back to top
+                <i class = "bi bi-arrow-up ms-1"></i>
+            </a>
+        </div>
+    </footer>
+
+    <div class = "toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style = "z-index:1100">
+        <div id = "linkToast" class = "toast" role = "status" data-bs-delay = "3500" data-bs-theme = "dark">
+            <div class = "toast-body d-flex justify-content-between align-items-center gap-3">
+                <span id = "toastText"></span>
+                <button type = "button" class = "btn-close" data-bs-dismiss = "toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <div class = "modal fade" id = "spoilerModal" tabindex = "-1" data-bs-theme = "dark">
+        <div class = "modal-dialog">
+            <div class = "modal-content">
+
+                <div class = "modal-header border-0 pb-0">
+                    <h2 class = "modal-title h4" id = "spoilerTitle">Block Spoilers</h2>
+                    <button type = "button" class = "btn-close" data-bs-dismiss = "modal" ></button>
+                </div>
+                <div class = "modal-body text-center pt-3 pb-4">
+
+                    <div class = "form-check form-switch big-switch -mx-auto d-flex flex-column align-items-center gap-1 ps-0">
+                        <input class = "form-check-input" type = "checkbox" role = "switch" id = "spoilerSwitch">
+                        <label class = "hidden-element" for = "spoilerSwitch">Block Spoilers</label>
+                        <span class = "switch-state" id = "spoilerSwitchState" aria-hidden = "true"></span>
+                    </div>
+
+                    <div class = "mt-4 pt-3 border-top border-secondary text-start">
+                        <p class = "small fw-bold mb-2">Example of a blocked spoiler</p>
+                        <p class = "mb-1 spoiler-on" id = "spoilerSample">
+                            Lorem ipsum
+                        </p>
+                        <p class = "small text-secondary mb-0">Select blocked text to reveal it.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
