@@ -1,0 +1,46 @@
+:root {
+    --color-page-background: #150403;
+    --color-red: #d11d29;
+    --color-dark-red: #7b2c31;
+    --color-panel: #2b0d0f;
+    --color-border: #5a2327;
+}
+
+body {
+    background: var(--color-page-background);
+    color: #ebe3d0;
+    font-family: 'Host Grotesk', sans-serif;
+    font-size: 1.05rem;
+}
+
+h1, h2, h3, .navbar-brand {
+    font-weight: 800;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+
+
+
+.site-nav {
+    background: var(--color-dark-red);
+}
+
+.navbar.brand {
+    font-size: 1.5rem;
+}
+
+.logo-mark {
+    height: 2.4rem;
+}
+
+.nav-link {
+    color: #f1dede;
+    font-weight: 600;
+}
+
+.offcanvas {
+    background: var(--color-panel);
+}
