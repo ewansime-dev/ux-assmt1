@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en">
+<html lang = "en" data-bs-theme = "dark">
 
 <head>
     <meta charset = "utf-8">
@@ -17,22 +17,22 @@
 <!-- lets app.js identify page -->
 <body id = "top" data-page = "characters">
 
-    <nav class = "navbar navbar-expand-lg site-nav sticky-top" data-bs-theme = "dark">
+    <nav class = "navbar navbar-expand-lg site-nav sticky-top" data-bs-theme = "dark" aria-label = "Main">
         <div class = "container-fluid px-3">
 
-            <button class = "navbar-toggler border-0 me-2" data-bs-toggle = "offcanvas" data-bs-target = "#menu">
+            <button class = "navbar-toggler border-0 me-2" data-bs-toggle = "offcanvas" data-bs-target = "#menu" aria-controls = "menu" aria-label = "Open menu">
                 <span class = "navbar-toggler-icon"></span>
             </button>
 
-            <a class = "navbar-brand d-flex align-items-center gap-1 m-0 me-auto me-lg-0" href = "HomePage.html">
+            <a class = "navbar-brand d-flex align-items-center gap-1 m-0 me-auto me-lg-0" href = "HomePage.html" aria-label = "Unthreaded home">
                 <img class = "logo-mark" src = "images/logo.png" alt = "">
                 <span>nthreaded</span>
             </a>
 
-            <div class = "offcanvas offcanvas-start offcanvas-lg" tabindex = "-1" id = "menu">
+            <div class = "offcanvas offcanvas-start offcanvas-lg" tabindex = "-1" id = "menu" aria-labelledby = "menuTitle">
                 <div class = "offcanvas-header">
                     <h2 class = "offcanvas-title h5" id = "menuTitle">Menu</h2>
-                    <button class = "btn-close" data-bs-dismiss = "offcanvas"></button>
+                    <button class = "btn-close" data-bs-dismiss = "offcanvas" aria-label = "Close menu"></button>
                 </div>
                 <div class = "offcanvas-body justify-content-lg-center">
                     <ul class = "navbar-nav">
@@ -40,14 +40,14 @@
                             <a class = "nav-link" href = "scenes.html">Scenes</a>
                         </li>
                         <li class = "nav-item">
-                            <a class = "nav-link active" href = "characters.html">Characters</a>
+                            <a class = "nav-link active" aria-current = "page" href = "characters.html">Characters</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <button class = "btn btn-outline-light" data-bs-toggle = "modal" data-bs-target = "#spoilerModal">
-                <i class = "bi bi-eye-slash me-2"></i>Spoilers
+                <i class = "bi bi-eye-slash me-2" aria-hidden = "true"></i>Spoilers
             </button>
 
         </div>
@@ -61,16 +61,16 @@
 
 
             <!-- search bar: x button  hidden until something is typed-->
-            <div class = "mb-4">
+            <div class = "mb-4" role = "search">
                 <label for = "search" class = "hidden-element">Search for a character</label>
 
                 <div class = "input-group input-group-lg">
                     <input id = "search" type = "search" class = "form-control" placeholder = "Search for a character">
-                    <button type = "button" id = "clearSearch" class = "btn border-secondary bg-transparent text-body" hidden>
-                        <i class = "bi bi-x-lg"></i>
+                    <button type = "button" id = "clearSearch" class = "btn border-secondary bg-transparent text-body" aria-label = "Clear search" hidden>
+                        <i class = "bi bi-x-lg" aria-hidden = "true"></i>
                     </button>
                     <span class = "input-group-text bg-transparent border-secondary">
-                        <i class = "bi bi-search"></i>
+                        <i class = "bi bi-search" aria-hidden = "true"></i>
                     </span>
                 </div>
             </div>
@@ -92,7 +92,7 @@
             <div id = "list">
 
                 <article class = "char-row" data-name = "Skarrsinger Karmelita">
-                    <img src = "images/skarrsinger-karmelita.jpg" alt = "Skarrsinger Karmelita" class = "img-fluid">
+                    <img src = "images/skarrsinger-karmelita.jpg" alt = "Skarrsinger Karmelita" class = "object-fit-cover">
                     <div>
                         <h2 class = "mb-1">
                             <a href = "#" data-goes = "the Skarrsinger Karmelita character page">Skarrsinger Karmelita</a>
@@ -103,7 +103,7 @@
                 </article>
 
                 <article class = "char-row" data-name = "Crust King Khann">
-                    <img src = "images/crust-king-khann.jpg" alt = "Crust King Khann" class = "img-fluid">
+                    <img src = "images/crust-king-khann.jpg" alt = "Crust King Khann" class = "object-fit-cover">
                     <div>
                         <h2 class = "mb-1">
                             <a href = "#" data-goes = "the Crust King Khann character page">Crust King Khann</a>
@@ -114,7 +114,7 @@
                 </article>
 
                 <article class = "char-row" data-name = "Pinmaster Plinney">
-                    <img src = "images/pinmaster-plinney.jpg" alt = "Pinmaster Plinney" class = "img-fluid">
+                    <img src = "images/pinmaster-plinney.jpg" alt = "Pinmaster Plinney" class = "object-fit-cover">
                     <div>
                         <h2 class = "mb-1">
                             <a href = "#" data-goes = "the Pinmaster Plinney character page">Pinmaster Plinney</a>
@@ -125,7 +125,7 @@
                 </article>
 
                 <article class = "char-row" data-name = "Sprintmaster Swift">
-                    <img src = "images/sprintmaster-swift.jpg" alt = "Sprintmaster Swift" class = "img-fluid">
+                    <img src = "images/sprintmaster-swift.jpg" alt = "Sprintmaster Swift" class = "object-fit-cover">
                     <div>
                         <h2 class = "mb-1">
                             <a href = "character.html">Sprintmaster Swift</a>
@@ -137,19 +137,22 @@
 
             </div>
 
-            <p id = "noCharacters" class = "py-4" hidden>No characters match your search.</p>
+            <!-- role status: screen readers read this out when it appears-->
+            <div role = "status">
+                <p id = "noCharacters" class = "py-4" hidden>No characters match your search.</p>
+            </div>
 
 
             <!-- pagination (links show a toast, only page 1 exists)-->
-            <nav class = "mt-4">
+            <nav class = "mt-4" aria-label = "Characters pages">
                 <ul class = "pagination justify-content-center">
                     <li class = "page-item">
-                        <a class = "page-link" href = "#" data-goes = "the previous page of characters">
-                            <i class = "bi bi-chevron-left"></i>
+                        <a class = "page-link" href = "#" data-goes = "the previous page of characters" aria-label = "Previous page">
+                            <i class = "bi bi-chevron-left" aria-hidden = "true"></i>
                         </a>
                     </li>
                     <li class = "page-item active">
-                        <a class = "page-link" href = "#" data-goes = "page 1 of characters">1</a>
+                        <a class = "page-link" aria-current = "page" href = "#" data-goes = "page 1 of characters">1</a>
                     </li>
                     <li class = "page-item">
                         <a class = "page-link" href = "#" data-goes = "page 2 of characters">2</a>
@@ -164,8 +167,8 @@
                         <a class = "page-link" href = "#" data-goes = "page 5 of characters">5</a>
                     </li>
                     <li class = "page-item">
-                        <a class = "page-link" href = "#" data-goes = "the next page of characters">
-                            <i class = "bi bi-chevron-right"></i>
+                        <a class = "page-link" href = "#" data-goes = "the next page of characters" aria-label = "Next page">
+                            <i class = "bi bi-chevron-right" aria-hidden = "true"></i>
                         </a>
                     </li>
                 </ul>
@@ -189,28 +192,28 @@
 
                     <div class = "col-6 col-md-3">
                         <a class = "related-card" href = "#" data-goes = "the Far Fields page">
-                            <img src = "images/far-fields.jpg" alt = "Far Fields" class = "img-fluid">
+                            <img src = "images/far-fields.jpg" alt = "Far Fields" class = "w-100 object-fit-cover">
                             <div class = "related-card-label">Far Fields</div>
                         </a>
                     </div>
 
                     <div class = "col-6 col-md-3">
                         <a class = "related-card" href = "#" data-goes = "the Hero's Memento page">
-                            <img src = "images/heros-memento.jpg" alt = "Hero's Memento" class = "img-fluid">
+                            <img src = "images/heros-memento.jpg" alt = "Hero's Memento" class = "w-100 object-fit-cover">
                             <div class = "related-card-label">Hero's Memento</div>
                         </a>
                     </div>
 
                     <div class = "col-6 col-md-3">
                         <a class = "related-card" href = "#" data-goes = "the Races page">
-                            <img src = "images/races.jpg" alt = "Races" class = "img-fluid">
+                            <img src = "images/races.jpg" alt = "Races" class = "w-100 object-fit-cover">
                             <div class = "related-card-label">Races</div>
                         </a>
                     </div>
 
                     <div class = "col-6 col-md-3">
                         <a class = "related-card" href = "#" data-goes = "the Swift Step page">
-                            <img src = "images/swift-step.jpg" alt = "Swift Step" class = "img-fluid">
+                            <img src = "images/swift-step.jpg" alt = "Swift Step" class = "w-100 object-fit-cover">
                             <div class = "related-card-label">Swift Step</div>
                         </a>
                     </div>
@@ -227,36 +230,36 @@
         <div class = "container-fluid px-3 py-3 d-flex flex-wrap align-items-center gap-4">
             <a href = "#" data-goes = "the About page">About</a>
             <a href = "#" data-goes = "the Discord Server">
-                <i class = "bi bi-discord me-2"></i>Discord
+                <i class = "bi bi-discord me-2" aria-hidden = "true"></i>Discord
             </a>
             <a href = "#" data-goes = "the YouTube channel">
-                <i class = "bi bi-youtube me-2"></i>YouTube
+                <i class = "bi bi-youtube me-2" aria-hidden = "true"></i>YouTube
             </a>
             <a href = "#" data-goes = "the Instagram account">
-                <i class = "bi bi-instagram me-2"></i>Instagram
+                <i class = "bi bi-instagram me-2" aria-hidden = "true"></i>Instagram
             </a>
             <a class = "ms-auto" href = "#top">Back to top
-                <i class = "bi bi-arrow-up ms-1"></i>
+                <i class = "bi bi-arrow-up ms-1" aria-hidden = "true"></i>
             </a>
         </div>
     </footer>
 
     <div class = "toast-container position-fixed bottom-0 start-50 translate-middle-x p-3" style = "z-index:1100">
-        <div id = "linkToast" class = "toast" role = "status" data-bs-delay = "3500" data-bs-theme = "dark">
+        <div id = "linkToast" class = "toast" role = "status" aria-live = "polite" aria-atomic = "true" data-bs-delay = "3500" data-bs-theme = "dark">
             <div class = "toast-body d-flex justify-content-between align-items-center gap-3">
                 <span id = "toastText"></span>
-                <button type = "button" class = "btn-close" data-bs-dismiss = "toast"></button>
+                <button type = "button" class = "btn-close" data-bs-dismiss = "toast" aria-label = "Close"></button>
             </div>
         </div>
     </div>
 
-    <div class = "modal fade" id = "spoilerModal" tabindex = "-1" data-bs-theme = "dark">
+    <div class = "modal fade" id = "spoilerModal" tabindex = "-1" aria-labelledby = "spoilerTitle" data-bs-theme = "dark">
         <div class = "modal-dialog">
             <div class = "modal-content">
 
                 <div class = "modal-header border-0 pb-0">
                     <h2 class = "modal-title h4" id = "spoilerTitle">Block Spoilers</h2>
-                    <button type = "button" class = "btn-close" data-bs-dismiss = "modal" ></button>
+                    <button type = "button" class = "btn-close" data-bs-dismiss = "modal" aria-label = "Close"></button>
                 </div>
                 <div class = "modal-body text-center pt-3 pb-4">
 
