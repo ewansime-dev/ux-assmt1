@@ -78,43 +78,53 @@
                             <div id = "areaFilters">
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Moss Grotto" id = "area0">
-                                    <label class = "form-check-label" for = "area0">Moss Grotto</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Bilewater" id = "area0">
+                                    <label class = "form-check-label" for = "area0">Bilewater</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Bone Bottom" id = "area1">
-                                    <label class = "form-check-label" for = "area1">Bone Bottom</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Blasted Steps" id = "area1">
+                                    <label class = "form-check-label" for = "area1">Blasted Steps</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "The Marrow" id = "area2">
-                                    <label class = "form-check-label" for = "area2">The Marrow</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Deep Docks" id = "area2">
+                                    <label class = "form-check-label" for = "area2">Deep Docks</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Deep Docks" id = "area3">
-                                    <label class = "form-check-label" for = "area3">Deep Docks</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Far Fields" id = "area3">
+                                    <label class = "form-check-label" for = "area3">Far Fields</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Far Fields" id = "area4">
-                                    <label class = "form-check-label" for = "area4">Far Fields</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Greymoor" id = "area4">
+                                    <label class = "form-check-label" for = "area4">Greymoor</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Greymoor" id = "area5">
-                                    <label class = "form-check-label" for = "area5">Greymoor</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Putrified Ducts" id = "area5">
+                                    <label class = "form-check-label" for = "area5">Putrified Ducts</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Bellhart" id = "area6">
-                                    <label class = "form-check-label" for = "area6">Bellhart</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Sands of Karak" id = "area6">
+                                    <label class = "form-check-label" for = "area6">Sands of Karak</label>
                                 </div>
 
                                 <div class = "form-check">
-                                    <input class = "form-check-input" type = "checkbox" value = "Shellwood" id = "area7">
-                                    <label class = "form-check-label" for = "area7">Shellwood</label>
+                                    <input class = "form-check-input" type = "checkbox" value = "Sinner's Road" id = "area7">
+                                    <label class = "form-check-label" for = "area7">Sinner's Road</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "The Abyss" id = "area8">
+                                    <label class = "form-check-label" for = "area8">The Abyss</label>
+                                </div>
+
+                                <div class = "form-check">
+                                    <input class = "form-check-input" type = "checkbox" value = "The Citadel" id = "area9">
+                                    <label class = "form-check-label" for = "area9">The Citadel</label>
                                 </div>
 
                             </div>
@@ -134,133 +144,173 @@
                         <!-- scene cards: app.js only shows, hides and reorders these-->
                         <div class = "row g-4" id = "grid">
 
-                            <div class = "col-6 col-md-4 scene" data-name = "Fleatopia Bench" data-area = "Moss Grotto">
+                            <div class = "col-6 col-md-4 scene" data-name = "The Abyss" data-area = "The Abyss">
+                                <a class = "scene-card" href = "#" data-goes = "The Abyss scene page">
+                                    <img src = "images/abyss.jpg" alt = "The Abyss" class = "w-100 object-fit-cover">
+                                    <div class = "label">The Abyss</div>
+                                    <div class = "small text-secondary">The Abyss</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Bell Shrine" data-area = "Far Fields">
+                                <a class = "scene-card" href = "#" data-goes = "the Bell Shrine scene page">
+                                    <img src = "images/bell-shrine.jpg" alt = "Bell Shrine" class = "w-100 object-fit-cover">
+                                    <div class = "label">Bell Shrine</div>
+                                    <div class = "small text-secondary">Far Fields</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Bilewater" data-area = "Bilewater">
+                                <a class = "scene-card" href = "#" data-goes = "the Bilewater scene page">
+                                    <img src = "images/bilewater.jpg" alt = "Bilewater" class = "w-100 object-fit-cover">
+                                    <div class = "label">Bilewater</div>
+                                    <div class = "small text-secondary">Bilewater</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Coral Army" data-area = "Sands of Karak">
+                                <a class = "scene-card" href = "#" data-goes = "the Coral Army scene page">
+                                    <img src = "images/coral-army.jpg" alt = "Coral Army" class = "w-100 object-fit-cover">
+                                    <div class = "label">Coral Army</div>
+                                    <div class = "small text-secondary">Sands of Karak</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Craftmetal" data-area = "Putrified Ducts">
+                                <a class = "scene-card" href = "#" data-goes = "the Craftmetal scene page">
+                                    <img src = "images/craftmetal.jpg" alt = "Craftmetal" class = "w-100 object-fit-cover">
+                                    <div class = "label">Craftmetal</div>
+                                    <div class = "small text-secondary">Putrified Ducts</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Craw Lake" data-area = "Greymoor">
+                                <a class = "scene-card" href = "#" data-goes = "the Craw Lake scene page">
+                                    <img src = "images/craw-lake.jpg" alt = "Craw Lake" class = "w-100 object-fit-cover">
+                                    <div class = "label">Craw Lake</div>
+                                    <div class = "small text-secondary">Greymoor</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Crocodile Camp" data-area = "Sinner's Road">
+                                <a class = "scene-card" href = "#" data-goes = "the Crocodile Camp scene page">
+                                    <img src = "images/crocodile-camp.jpg" alt = "Crocodile Camp" class = "w-100 object-fit-cover">
+                                    <div class = "label">Crocodile Camp</div>
+                                    <div class = "small text-secondary">Sinner's Road</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Disgraced Chef Lugoli" data-area = "Sinner's Road">
+                                <a class = "scene-card" href = "#" data-goes = "the Disgraced Chef Lugoli scene page">
+                                    <img src = "images/disgraced-chef-lugoli.jpg" alt = "Disgraced Chef Lugoli" class = "w-100 object-fit-cover">
+                                    <div class = "label">Disgraced Chef Lugoli</div>
+                                    <div class = "small text-secondary">Sinner's Road</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Far Fields" data-area = "Far Fields">
+                                <a class = "scene-card" href = "#" data-goes = "the Far Fields scene page">
+                                    <img src = "images/far-fields.jpg" alt = "Far Fields" class = "w-100 object-fit-cover">
+                                    <div class = "label">Far Fields</div>
+                                    <div class = "small text-secondary">Far Fields</div>
+                                </a>
+                            </div>
+
+                            <div class = "col-6 col-md-4 scene" data-name = "Fleatopia Bench" data-area = "Putrified Ducts">
                                 <a class = "scene-card" href = "scene.html">
                                     <img src = "images/fleatopia-bench.jpg" alt = "Fleatopia Bench" class = "w-100 object-fit-cover">
                                     <div class = "label">Fleatopia Bench</div>
-                                    <div class = "small text-secondary">Moss Grotto</div>
+                                    <div class = "small text-secondary">Putrified Ducts</div>
                                 </a>
-                        </div>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Grand Bellway" data-area = "Bone Bottom">
-                            <a class = "scene-card" href = "#" data-goes = "the Grand Bellway scene page">
-                                <img src = "images/grand-bellway.jpg" alt = "Grand Bellway" class = "w-100 object-fit-cover">
-                                <div class = "label">Grand Bellway</div>
-                                <div class = "small text-secondary">Bone Bottom</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Grand Bellway" data-area = "The Citadel">
+                                <a class = "scene-card" href = "#" data-goes = "the Grand Bellway scene page">
+                                    <img src = "images/grand-bellway.jpg" alt = "Grand Bellway" class = "w-100 object-fit-cover">
+                                    <div class = "label">Grand Bellway</div>
+                                    <div class = "small text-secondary">The Citadel</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Jubilana's Shop" data-area = "The Marrow">
-                            <a class = "scene-card" href = "#" data-goes = "the Jubilana's Shop scene page">
-                                <img src = "images/jubilanas-shop.jpg" alt = "Jubilana's Shop" class = "w-100 object-fit-cover">
-                                <div class = "label">Jubilana's Shop</div>
-                                <div class = "small text-secondary">The Marrow</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Groal" data-area = "Bilewater">
+                                <a class = "scene-card" href = "#" data-goes = "the Groal scene page">
+                                    <img src = "images/groal.jpg" alt = "Groal" class = "w-100 object-fit-cover">
+                                    <div class = "label">Groal</div>
+                                    <div class = "small text-secondary">Bilewater</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Terminus" data-area = "Deep Docks">
-                            <a class = "scene-card" href = "#" data-goes = "the Terminus scene page">
-                                <img src = "images/terminus.jpg" alt = "Terminus" class = "w-100 object-fit-cover">
-                                <div class = "label">Terminus</div>
-                                <div class = "small text-secondary">Deep Docks</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Halfway Home" data-area = "Greymoor">
+                                <a class = "scene-card" href = "#" data-goes = "the Halfway Home scene page">
+                                    <img src = "images/halfway-home.jpg" alt = "Halfway Home" class = "w-100 object-fit-cover">
+                                    <div class = "label">Halfway Home</div>
+                                    <div class = "small text-secondary">Greymoor</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Shakra's Shrine" data-area = "Far Fields">
-                            <a class = "scene-card" href = "#" data-goes = "the Shakra's Shrine scene page">
-                                <img src = "images/shakras-shrine.jpg" alt = "Shakra's Shrine" class = "w-100 object-fit-cover">
-                                <div class = "label">Shakra's Shrine</div>
-                                <div class = "small text-secondary">Far Fields</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Karmelita Statue" data-area = "Far Fields">
+                                <a class = "scene-card" href = "#" data-goes = "the Karmelita Statue scene page">
+                                    <img src = "images/karmelita-statue.jpg" alt = "Karmelita Statue" class = "w-100 object-fit-cover">
+                                    <div class = "label">Karmelita Statue</div>
+                                    <div class = "small text-secondary">Far Fields</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Eva" data-area = "Greymoor">
-                            <a class = "scene-card" href = "#" data-goes = "the Eva scene page">
-                                <img src = "images/eva.jpg" alt = "Eva" class = "w-100 object-fit-cover">
-                                <div class = "label">Eva</div>
-                                <div class = "small text-secondary">Greymoor</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Magnetite Dice" data-area = "Blasted Steps">
+                                <a class = "scene-card" href = "#" data-goes = "the Magnetite Dice scene page">
+                                    <img src = "images/magnetite-dice.jpg" alt = "Magnetite Dice" class = "w-100 object-fit-cover">
+                                    <div class = "label">Magnetite Dice</div>
+                                    <div class = "small text-secondary">Blasted Steps</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Hokers" data-area = "Bellhart">
-                            <a class = "scene-card" href = "#" data-goes = "the Hokers scene page">
-                                <img src = "images/hokers.jpg" alt = "Hokers" class = "w-100 object-fit-cover">
-                                <div class = "label">Hokers</div>
-                                <div class = "small text-secondary">Bellhart</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Mining Bell" data-area = "Deep Docks">
+                                <a class = "scene-card" href = "#" data-goes = "the Mining Bell scene page">
+                                    <img src = "images/mining-bell.jpg" alt = "Mining Bell" class = "w-100 object-fit-cover">
+                                    <div class = "label">Mining Bell</div>
+                                    <div class = "small text-secondary">Deep Docks</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Craw Lake" data-area = "Shellwood">
-                            <a class = "scene-card" href = "#" data-goes = "the Craw Lake scene page">
-                                <img src = "images/craw-lake.jpg" alt = "Craw Lake" class = "w-100 object-fit-cover">
-                                <div class = "label">Craw Lake</div>
-                                <div class = "small text-secondary">Shellwood</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Mister Mushroom" data-area = "Putrified Ducts">
+                                <a class = "scene-card" href = "#" data-goes = "the Mister Mushroom scene page">
+                                    <img src = "images/mister-mushroom.jpg" alt = "Mister Mushroom" class = "w-100 object-fit-cover">
+                                    <div class = "label">Mister Mushroom</div>
+                                    <div class = "small text-secondary">Putrified Ducts</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Pond Catching" data-area = "Moss Grotto">
-                            <a class = "scene-card" href = "#" data-goes = "the Pond Catching scene page">
-                                <img src = "images/pond-catching.jpg" alt = "Pond Catching" class = "w-100 object-fit-cover">
-                                <div class = "label">Pond Catching</div>
-                                <div class = "small text-secondary">Moss Grotto</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Skarr Tribe" data-area = "Blasted Steps">
+                                <a class = "scene-card" href = "#" data-goes = "the Skarr Tribe scene page">
+                                    <img src = "images/skarr-tribe.jpg" alt = "Skarr Tribe" class = "w-100 object-fit-cover">
+                                    <div class = "label">Skarr Tribe</div>
+                                    <div class = "small text-secondary">Blasted Steps</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "The Mist" data-area = "Bone Bottom">
-                            <a class = "scene-card" href = "#" data-goes = "the The Mist scene page">
-                                <img src = "images/the-mist.jpg" alt = "The Mist" class = "w-100 object-fit-cover">
-                                <div class = "label">The Mist</div>
-                                <div class = "small text-secondary">Bone Bottom</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Sprintmaster Stadium" data-area = "Far Fields">
+                                <a class = "scene-card" href = "#" data-goes = "the Sprintmaster Stadium scene page">
+                                    <img src = "images/sprintmaster-stadium.jpg" alt = "Sprintmaster Stadium" class = "w-100 object-fit-cover">
+                                    <div class = "label">Sprintmaster Stadium</div>
+                                    <div class = "small text-secondary">Far Fields</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Fayforn" data-area = "The Marrow">
-                            <a class = "scene-card" href = "#" data-goes = "the Fayforn scene page">
-                                <img src = "images/fayforn.jpg" alt = "Fayforn" class = "w-100 object-fit-cover">
-                                <div class = "label">Fayforn</div>
-                                <div class = "small text-secondary">The Marrow</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "The Stage" data-area = "The Citadel">
+                                <a class = "scene-card" href = "#" data-goes = "The Stage scene page">
+                                    <img src = "images/the-stage.jpg" alt = "The Stage" class = "w-100 object-fit-cover">
+                                    <div class = "label">The Stage</div>
+                                    <div class = "small text-secondary">The Citadel</div>
+                                </a>
+                            </div>
 
-                        <div class = "col-6 col-md-4 scene" data-name = "Mask Maker's Retreat" data-area = "Deep Docks">
-                            <a class = "scene-card" href = "#" data-goes = "the Mask Maker's Retreat scene page">
-                                <img src = "images/mask-makers-retreat.jpg" alt = "Mask Maker's Retreat" class = "w-100 object-fit-cover">
-                                <div class = "label">Mask Maker's Retreat</div>
-                                <div class = "small text-secondary">Deep Docks</div>
-                            </a>
-                        </div>
-
-                        <div class = "col-6 col-md-4 scene" data-name = "Grindle's Cell" data-area = "Far Fields">
-                            <a class = "scene-card" href = "#" data-goes = "the Grindle's Cell scene page">
-                                <img src = "images/grindles-cell.jpg" alt = "Grindle's Cell" class = "w-100 object-fit-cover">
-                                <div class = "label">Grindle's Cell</div>
-                                <div class = "small text-secondary">Far Fields</div>
-                            </a>
-                        </div>
-
-                        <div class = "col-6 col-md-4 scene" data-name = "Sprintmaster Stadium" data-area = "Greymoor">
-                            <a class = "scene-card" href = "#" data-goes = "the Sprintmaster Stadium scene page">
-                                <img src = "images/sprintmaster-stadium.jpg" alt = "Sprintmaster Stadium" class = "w-100 object-fit-cover">
-                                <div class = "label">Sprintmaster Stadium</div>
-                                <div class = "small text-secondary">Greymoor</div>
-                            </a>
-                        </div>
-
-                        <div class = "col-6 col-md-4 scene" data-name = "Magnetite Dice" data-area = "Bellhart">
-                            <a class = "scene-card" href = "#" data-goes = "the Magnetite Dice scene page">
-                                <img src = "images/magnetite-dice.jpg" alt = "Magnetite Dice" class = "w-100 object-fit-cover">
-                                <div class = "label">Magnetite Dice</div>
-                                <div class = "small text-secondary">Bellhart</div>
-                            </a>
-                        </div>
-
-                        <div class = "col-6 col-md-4 scene" data-name = "Swift Step" data-area = "Shellwood">
-                            <a class = "scene-card" href = "#" data-goes = "the Swift Step scene page">
-                                <img src = "images/swift-step.jpg" alt = "Swift Step" class = "w-100 object-fit-cover">
-                                <div class = "label">Swift Step</div>
-                                <div class = "small text-secondary">Shellwood</div>
-                            </a>
-                        </div>
+                            <div class = "col-6 col-md-4 scene" data-name = "Weavenest" data-area = "Bilewater">
+                                <a class = "scene-card" href = "#" data-goes = "the Weavenest scene page">
+                                    <img src = "images/weavenest.jpg" alt = "Weavenest" class = "w-100 object-fit-cover">
+                                    <div class = "label">Weavenest</div>
+                                    <div class = "small text-secondary">Bilewater</div>
+                                </a>
+                            </div>
 
                         </div>
 

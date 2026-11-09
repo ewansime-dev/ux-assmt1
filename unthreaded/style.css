@@ -107,6 +107,7 @@ h1 {
     background-color: var(--color-page-background);
     background-image: url("images/hero-bg.jpg");
     background-size: cover;
+    background-position: center;
     padding: 5rem 0;
 }
 
